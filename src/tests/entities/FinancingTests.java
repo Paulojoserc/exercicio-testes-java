@@ -50,4 +50,24 @@ public class FinancingTests {
 		});
 		
 	}
+	
+	@Test
+	public void setIncomeShouldSetDataWhenValidData() {
+
+		// arrange
+		Financing f = new Financing(100000.0, 2000.0, 80);
+		// action
+		f.setTotalAmount(2100.0);
+
+				
+	}
+	@Test
+	public void setIncomeShouldIThrowllegalArgumentExceptiontWhenValidData() {
+
+		Assertions.assertThrows(IllegalArgumentException.class, ()-> {
+			Financing f = new Financing(100000.0, 2000.0, 80);
+			f.setIncome(1900.0);
+		});
+		
+	}
 }
