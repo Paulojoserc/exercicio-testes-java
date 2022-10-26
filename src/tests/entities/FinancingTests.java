@@ -70,4 +70,23 @@ public class FinancingTests {
 		});
 		
 	}
+	@Test
+	public void setMonthsShouldSetDataWhenValidData() {
+
+		// arrange
+		Financing f = new Financing(100000.0, 2000.0, 80);
+		// action
+		f.setMonths(90);
+
+				
+	}
+	@Test
+	public void setMonthsShouldIThrowllegalArgumentExceptiontWhenValidData() {
+
+		Assertions.assertThrows(IllegalArgumentException.class, ()-> {
+			Financing f = new Financing(100000.0, 2000.0, 80);
+			f.setMonths(79);
+		});
+		
+	}
 }
